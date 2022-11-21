@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-11-21T08:29:42-06:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Book of Shadow</title><subtitle>A technical blog for the recently programmable</subtitle><entry><title type="html">Adding a messenger to FusionAuth using Twilio</title><link href="http://localhost:4000/jekyll/update/2022/11/21/sms.html" rel="alternate" type="text/html" title="Adding a messenger to FusionAuth using Twilio" /><published>2022-11-21T05:39:12-06:00</published><updated>2022-11-21T05:39:12-06:00</updated><id>http://localhost:4000/jekyll/update/2022/11/21/sms</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2022/11/21/sms.html"><![CDATA[<p><img src="/assets/0.png" alt="FA" width="250" /></p>
+
+<p>One of the spicier features of FusionAuth’s multi factor authentication is the ability to login using an SMS push messages  to your mobile phone. But how do we this in our settings? Fear not, for this blog post is here to help. You’ll need a Twilio trial account with a number set up (we’ll do this together)</p>
+
+<h1 id="twilio-setup"><font size="10">Twilio Setup</font></h1>
+<p><img src="/assets/Twilio.png" alt="Twilio Page" /></p>
+
+<p>Head over to <a href="https://www.twilio.com/">Twilio</a> and create an account. Once you’re all setup we’re going to scroll down and take a look at Account Info. Note the Account SID and Auth Token. We’re going to use these later to connect our FusionAuth account.</p>
+
+<p><img src="/assets/TwilioSID.png" alt="Twilio SID" /></p>
+
+<p>Next in the box above there is an option to get a number. This one is part of the free trial account and will be assigned as long as you’re under the free trial. After you click the button, you’ll see your number under your account info. Take note of this as well as we’ll use this in our FusionAuth setup later.</p>
+
+<h2 id="fusionauth--twilio--️"><font size="10">FusionAuth + Twilio = 🗨️</font></h2>
+
+<p>We’ll open FusionAuth and navigate to Settings. From there to the Messengers configuration.</p>
+
+<p>In the corner you’ll see a + sign with a dropdown menu. Choose add a Twilio Messenger. Note there are options for Generic and Kafka messengers as well if those fit better into your program.</p>
+
+<p><img src="/assets/AddTwilio3.png" alt="Twilio Add" /></p>
+
+<p>From here we’re going to name our Messenger. I chose Twilio but any name will do. Next we’ll add our Account SID, Auth Token, and phone number that we noted earlier from our Twilio account information. Once that’s done you can enter your phone number to send a test txt to make sure everything is integrated. From there hit save and your messenger will be ready to use in your FusionAuth tenants.</p>
+
+<p><img src="/assets/TwilioInfo.png" alt="Twilio Info" /></p>
+
+<p>Lets navigate to the Tenants configuration and the scroll down to SMS settings. Click enabled and the messenger option will appear. From here you can choose the messenger that we just set up.</p>
+
+<p><img src="/assets/SMSsetting.png" alt="Tenants" /></p>
+
+<p>And there you have it! Twilio integrated into your FusionAuth, ready to be used in your multi factor authentication.</p>
+
+<p><img src="/assets/SMS.jpg" alt="Txt" width="300" /></p>]]></content><author><name></name></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry></feed>
